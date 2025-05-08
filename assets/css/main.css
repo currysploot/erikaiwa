@@ -7,9 +7,28 @@
 	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
 */
 
-#erikaiwa {
+:root {
+	--red: #d61c1c;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+.fill {
 	max-width: 100%;	
 	max-height: 100%;
+	object-fit: cover;
+    -webkit-user-drag: none;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+.fill {
+	max-width: 50%;	
+	max-height: 50%;
 	object-fit: cover;
     -webkit-user-drag: none;
     user-select: none;
@@ -232,7 +251,25 @@ input, select, textarea {
 			font-size: 1.25em;
 		}
 
+	li {
+		text-align: center;
+		height: 100%;
+	}
+
+	li > img {
+		height: 100%;
+		object-fit: cover;
+	}
+
+
+
 /* Container */
+
+	.container-flex {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
 
 	.container-small {
 		margin: 0 auto;
@@ -243,7 +280,21 @@ input, select, textarea {
 	.container {
 		margin: 0 auto;
 		max-width: calc(100% - 50px);
+		max-height: 100%;
 		width: 1200px;
+	}
+
+	.container.grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 1rem; /* optional, adds spacing between items */
+	}
+	
+	/* Media query to switch to one column on small screens */
+	@media (max-width: 768px) {
+		.container.grid {
+			grid-template-columns: 1fr;
+		}
 	}
 
 		.container.medium {
@@ -2066,14 +2117,19 @@ input, select, textarea {
 	}
 
 		#nav ul {
+			display: flex;
+			align-items: center;
+			justify-content: center;
 			margin-bottom: 0;
 			list-style: none;
 			padding-left: 0;
+			height: 100%;
 		}
 
 		#nav li {
 			display: inline-block;
 			padding-left: 0;
+			height: 100%;
 		}
 
 		#nav a {
@@ -2124,6 +2180,9 @@ input, select, textarea {
 	#top {
 		padding: 3em 0 10em 0;
 		text-align: left;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
 	}
 
 		#top .image {

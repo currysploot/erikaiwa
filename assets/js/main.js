@@ -32,3 +32,12 @@
 		});
 
 })(jQuery);
+
+document.addEventListener("DOMContentLoaded", function() {
+	const btn = document.getElementById("schedulingBtn");
+	const target = document.getElementById("scheduling");
+
+	btn.onclick = () => {
+		target.scrollIntoView({ behavior: 'smooth', block: 'end' });
+	}
+});
